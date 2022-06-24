@@ -6,10 +6,10 @@
 JARBS (Jim's Auto-Ricing Bootstrapping Script) is a script meant to setup my [dotfiles](https://github.com/JimPix1/dotfiles), inspired by [Luke Smith](https://github.com/LukeSmithxyz)'s [LARBS](https://github.com/LukeSmithxyz/LARBS).
 
 ## Installation:
-On an Arch-based distribution as root, run the following:
+On Arch or an Arch-based distribution, run the following:
 
 ```
-git clone https://github.com/JimPix1/JARBS
+git clone https://github.com/JimPix1/JARBS && cd JARBS
 bash jarbs.sh
 ```
 
