@@ -31,13 +31,15 @@ echo "${b}- Installing Git."
 sudo pacman -Sy --needed --noconfirm git
 echo "${b}- Cloning the dotfiles."
 git clone https://github.com/JimPix1/dotfiles/
+echo "${b}- Installing YAY."
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si --noconfirm
+cd ..
 
 # Step 1: DWM Installation
 echo "${b}- Installing DWM."
-git clone https://aur.archlinux.org/libxft-bgra.git
-cd libxft-bgra || exit
-makepkg -si --noconfirm
-cd ..
+yay -S libxft-bgra
 mkdir -p ~/.config
 mv -f dotfiles/config/dwm ~/.config/dwm
 sudo make install ~/.config/dwm
@@ -71,10 +73,7 @@ mv -f dotfiles/gtk-2.0 ~/.config/gtk-2.0
 
 # Step 7: Preparing LF.
 echo "${b}- Preparing LF"
-git clone https://aur.archlinux.org/lf.git
-cd lf || exit
-makepkg -si --noconfirm
-cd ..
+yay -S lf-git
 sudo pacman -S --needed --noconfirm ueberzug ffmpegthumbnailer poppler imagemagick epub-thumbnailer bat unzip 7z unrar catdoc docx2txt odt2txt gnumeric iso-info
 mv -f dotfiles/config/lf ~/.config/lf
 
